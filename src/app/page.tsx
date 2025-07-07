@@ -31,7 +31,7 @@ export default function HomePage() {
       <section className="flex flex-1 flex-col items-center justify-center text-center px-4">
         <h1 className="text-4xl font-extrabold mb-4 text-gray-900">Welcome to Vendash</h1>
         <p className="text-lg text-gray-600 mb-8 max-w-2xl">
-          Vendash is a vendor management system for managing vendors where you can create new vendors, update and delete vendor details.
+          <span className='font-semibold'>Vendash</span> is a vendor management system for managing vendors where you can create new vendors, update and delete vendor details.
         </p>
         <span className="text-lg text-white bg-green-600 p-3 rounded-2xl font-medium">
           Login to Open Dashboard
