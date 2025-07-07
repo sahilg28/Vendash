@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
-import { authOptions } from '../auth/[...nextauth]/route';
+import authOptions from '../auth/authOptions';
 import { connectToDatabase } from '@/lib/mongodb';
 import Vendor from '@/models/vendor';
 
@@ -11,7 +11,7 @@ export async function GET(req: NextRequest) {
   await connectToDatabase();
   const { searchParams } = new URL(req.url);
   const page = parseInt(searchParams.get('page') || '1', 10);
-  const limit = parseInt(searchParams.get('limit') || '5', 10);
+  const limit = parseInt(searchParams.get('limit') || '10', 10);
   const skip = (page - 1) * limit;
 
   const [vendors, total] = await Promise.all([
